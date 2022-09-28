@@ -10,6 +10,7 @@
     "refreshTypes": "pcf-scripts refreshTypes"
   },
   "dependencies": {
+    "bootstrap": "^5.2.1",
     "file-saver": "^2.0.5",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",

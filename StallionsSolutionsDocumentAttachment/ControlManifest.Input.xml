@@ -33,6 +33,10 @@
     <resources>
       <code path="index.ts" order="1" />
       <css path="./components/style.css" order="1" />
+      <img path="./components/assets/image.png" />
+      <img path="./components/assets/pdf.png" />
+      <img path="./components/assets/office.png" />
+      <img path="./components/assets/download.png" />
       <!-- UNCOMMENT TO ADD MORE RESOURCES
       <css path="css/StallionsSolutionsDocumentAttachment.css" order="1" />
       <resx path="strings/StallionsSolutionsDocumentAttachment.1033.resx" version="1.0.0" />
@@ -45,7 +49,7 @@
       <uses-feature name="Device.getBarcodeValue" required="true" />
       <uses-feature name="Device.getCurrentPosition" required="true" />
       <uses-feature name="Device.pickFile" required="true" /> -->
-      <uses-feature name="Utility" required="true" /> 
+      <uses-feature name="Utility" required="true" />
       <uses-feature name="WebAPI" required="true" />
     </feature-usage>
   </control>

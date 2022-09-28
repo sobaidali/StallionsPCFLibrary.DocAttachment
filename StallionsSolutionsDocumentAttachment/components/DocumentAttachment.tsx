@@ -3,6 +3,9 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { FileUploader } from 'react-drag-drop-files';
 import { saveAs } from 'file-saver';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./style.css";
+
 const DocumentAttachment = (props: any) => {
     const [attachments, setAttachments] = useState<any>([]);
     const [file, setFile] = useState("");
@@ -107,24 +110,24 @@ const DocumentAttachment = (props: any) => {
         return blob;
     };
     return (
-        <Container>
-            <Row>
-                <Col className="column">
-                    <div>
+        <>
+            <Row className='file-viewer-container'>
+                <Col md={5} className="col file-viewer">
+                    <div className='file-upload'>
                         <FileUploader
                             handleChange={handleChange}
                             name="file"
                             label="Upload file"
                         />
                     </div>
-                    <div className="table-vertical-scroll">
-                        <table>
+                    <div className="table-responsive table-container">
+                        <table className='table'>
                             <thead>
                                 <tr>
                                     <th>Filename</th>
                                     <th>Created on</th>
                                     <th>Size</th>
-                                    <th>Download</th>
+                                    <th className='download-th'>Download</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -133,10 +136,14 @@ const DocumentAttachment = (props: any) => {
                                     const contenttype = curr.mimetype.split(".")[0];
                                     return (
                                         <tr key={ind}>
-                                            <td onClick={() => handleClick(curr, "preview")}><small className="space" id={ext}>{curr.filename}</small></td>
-                                            <td><small className="space">{curr.createdon}</small></td>
-                                            <td><small className="space">{Math.round(curr.filesize * 0.001)} KBs</small></td>
-                                            <td onClick={() => handleClick(curr, "download")}><button className="dld-btn"><small>Download</small></button></td>
+                                            <td onClick={() => handleClick(curr, "preview")}><span id={ext}>{curr.filename}</span></td>
+                                            <td><span className="">{curr.createdon}</span></td>
+                                            <td><span className="text-nowrap">{Math.round(curr.filesize * 0.001)} KBs</span></td>
+                                            <td className='text-center'>
+                                                <button className="download-btn" onClick={() => handleClick(curr, "download")}>
+
+                                                </button>
+                                            </td>
                                         </tr>
                                     )
                                 })}
@@ -144,16 +151,13 @@ const DocumentAttachment = (props: any) => {
                         </table>
                     </div>
                 </Col>
-                <Col className="column">
-                    <iframe
-                        height="400px"
-                        width="750px"
-                        src={file}
-                    >
-                    </iframe>
+                <Col md={7} className="col viewer">
+                    <div className="img-viewer">
+                        <iframe src={file}></iframe>
+                    </div>
                 </Col>
             </Row>
-        </Container>
+        </>
     );
 };
 export default DocumentAttachment;

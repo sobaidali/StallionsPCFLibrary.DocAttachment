@@ -3,7 +3,6 @@ import * as ReactDOM from "react-dom";
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
 import DocumentAttachment from "./components/DocumentAttachment";
-import "./components/style.css";
 
 export class StallionsSolutionsDocumentAttachment implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     private _container: HTMLDivElement;

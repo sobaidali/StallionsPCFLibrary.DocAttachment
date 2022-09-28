@@ -1,4 +1,4 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
 }
@@ -8,9 +8,9 @@ body {
     font: 14px Sans-Serif;
     padding: 50px;
     background: #eee;
-}
+} */
 
-h1 {
+/* h1 {
     text-align: center;
     padding: 20px 0 12px 0;
     margin: 0;
@@ -20,22 +20,17 @@ h2 {
     font-size: 16px;
     text-align: center;
     padding: 0 0 12px 0;
-}
+} */
 
-#container {
+/* #container {
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
     position: relative;
     background: white;
-}
+} */
 
-table {
-    background-color: #F3F3F3;
-    border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0;
-}
 
-th {
+
+/* th {
     background-color: rgb(116, 39, 116);
     color: #FFF;
     cursor: pointer;
@@ -65,11 +60,12 @@ th a {
     padding-left: 0
 }
 
+
 /* td:first-of-type a {
     background: url(../assets/file.png) no-repeat 10px 50%;
     padding-left: 35px;
 } */
-th:first-of-type {
+/* th:first-of-type {
     padding-left: 35px;
 }
 
@@ -87,58 +83,156 @@ tr:hover td {
 
 tr:hover td a {
     color: #000;
+} */
+.table-container {
+    max-height: 445px;
+    overflow-y: auto;
+}
+
+.table {
+    background: white;
+    border-spacing: 0;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    border: 1px solid #dde4ea;
+    margin: 0;
+}
+
+.table thead tr {
+    height: 40px;
+    border-bottom: 1px solid #dde4ea;
+}
+
+.table tbody tr {
+    height: 40px;
+}
+
+.table tbody tr:not(:last-of-type) {
+    border-bottom: 1px solid #dde4ea;
+}
+
+.table tbody tr:hover {
+    background: #f7f7f7 !important;
+}
+
+.table th,
+.table td {
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: left;
+    padding: 0 10px;
+    text-align: left;
+    color: #253D4E;
+    overflow: hidden;
+    /* text-overflow: ellipsis;
+    white-space: nowrap; */
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+
+.table th {
+    font-family: 600;
 }
 
 /* icons for file types (icons by famfamfam) */
 /* images */
-table tr td:first-of-type small[id$=".jpg"],
-table tr td:first-of-type small[id$=".png"],
-table tr td:first-of-type small[id$=".gif"],
-table tr td:first-of-type small[id$=".svg"],
-table tr td:first-of-type small[id$=".jpeg"] {
-    background: url(./assets/image.png) no-repeat 10px 50%;
-    padding-left: 35px;
+.table tr td:first-of-type span[id$=".jpg"],
+.table tr td:first-of-type span[id$=".png"],
+.table tr td:first-of-type span[id$=".gif"],
+.table tr td:first-of-type span[id$=".svg"],
+.table tr td:first-of-type span[id$=".jpeg"] {
+    background: url(./assets/image.png) no-repeat 0 50%;
+    padding-left: 25px;
     cursor: pointer;
+    background-size: contain;
 }
 
 /* zips */
-table tr td:first-of-type small[id$=".pdf"] {
-    background: url(./assets/pdf.png) no-repeat 10px 50%;
-    padding-left: 35px;
+.table tr td:first-of-type span[id$=".pdf"] {
+    background: url(./assets/pdf.png) no-repeat 0 50%;
+    padding-left: 25px;
     cursor: pointer;
+    background-size: contain;
 }
 
 /* docs */
-table tr td:first-of-type small[id$=".doc"],
-table tr td:first-of-type small[id$=".docx"],
-table tr td:first-of-type small[id$=".ppt"],
-table tr td:first-of-type small[id$=".pptx"],
-table tr td:first-of-type small[id$=".pps"],
-table tr td:first-of-type small[id$=".ppsx"],
-table tr td:first-of-type small[id$=".xls"],
-table tr td:first-of-type small[id$=".xlsx"] {
-    background: url(./assets/office.png) no-repeat 10px 50%;
-    padding-left: 35px;
+.table tr td:first-of-type span[id$=".doc"],
+.table tr td:first-of-type span[id$=".docx"],
+.table tr td:first-of-type span[id$=".ppt"],
+.table tr td:first-of-type span[id$=".pptx"],
+.table tr td:first-of-type span[id$=".pps"],
+.table tr td:first-of-type span[id$=".ppsx"],
+.table tr td:first-of-type span[id$=".xls"],
+.table tr td:first-of-type span[id$=".xlsx"] {
+    background: url(./assets/office.png) no-repeat 0 50%;
+    padding-left: 25px;
     cursor: pointer;
+    background-size: contain;
 }
 
-.space {
-    margin-right: 3px;
+
+.download-th {
+    width: 0px;
+    white-space: nowrap;
 }
 
-.column {
-    float: left;
-    width: 45%;
-    margin-right: 10px;
-}
-
-.dld-btn {
-    margin-left: 15px;
+.download-btn {
+    background: transparent;
+    border: none;
     cursor: pointer;
+    white-space: nowrap;
+    padding: 0;
+    background: url(./assets/download.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
 }
 
-.table-vertical-scroll {
+/* .table-vertical-scroll {
     max-height: 332px;
     overflow: auto;
     display: inline-block;
+} */
+
+/* .file-viewer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    row-gap: 20px;
+    justify-content: space-between;
+}
+
+.file-viewer-container>.col {
+    flex-grow: 1;
+    flex-shrink: 500px;
+    width: 45%;
+} */
+
+.file-upload {
+    margin-bottom: 20px;
+}
+
+.file-upload label {
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-width: 100%;
+    height: 70px;
+}
+
+.file-viewer-container .viewer .img-viewer {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.file-viewer-container .viewer .img-viewer iframe {
+    width: 100%;
+    height: 500px;
 }
